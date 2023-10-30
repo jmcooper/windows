@@ -1,3 +1,4 @@
+(Forked from ninbura/windows and edited for my personal steps/settings)
 # table of contents
 - [steps](#steps)
 	1. [update & configure your motherboard's bios](#update--configure-your-motherboards-bios)
