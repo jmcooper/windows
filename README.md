@@ -68,7 +68,9 @@
 		- `winget install git.git`
 8. ### configure windows terminal
 	- restart windows terminal
-	- open windows terminal settings (dropdown near tabs) & set your default profile as powershell 7 (darker blue powershell)
+	- open windows terminal settings (dropdown near tabs) & set your default profile as bash
+ 	- select the bash profile in left hand menu & enable "run this profile as administrator", select color scheme
+  	- duplicate bash profile and create a larger font profile for recording
 	- select the powershell 7 profile in the left hand menu & enable "run this profile as administrator"
 9. ### download, configure, & run `bulk-edit-settings` powershell script
 	- restart windows terminal
