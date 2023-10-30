@@ -10,10 +10,10 @@ param(
   [boolean]$enableCompactView = $true, # this removes a lot of dead space in file explorer returning the way it looked/felt in windows 10
   [boolean]$hideRecycleBinOnDesktop = $true, # removes the recycle bin shortcut from your desktop & places it in the navigation pane of file explorer
   [boolean]$showFileExtensionsForKnownFileTypes = $true, # prevents windows from hiding file extensions for "known" file types
-  [boolean]$showFrequentlyUsedFoldersInQuickAccess = $false, # allows windows to show recently used folders in your quick access pin list in file explorer
+  # [boolean]$showFrequentlyUsedFoldersInQuickAccess = $false, # allows windows to show recently used folders in your quick access pin list in file explorer
   [boolean]$showHiddenFilesAndFolders = $true, # prevents windows from hiding files and folders in file explorer
   [boolean]$showOfficeCloudFilesInQuickAccess = $false, # allows windows to show cloud files from office.com in your quick access pin list in file explorer
-  [boolean]$showRecentlyUsedFilesInQuickAccess = $false, # allows windows to show recently used files in your quick access pin list in file explorer
+  # [boolean]$showRecentlyUsedFilesInQuickAccess = $false, # allows windows to show recently used files in your quick access pin list in file explorer
 
   # network settings
   [boolean]$enableNetworkDiscovery = $true, # enables network discovery on private & public networks
@@ -21,10 +21,10 @@ param(
 
   # performance settings
   [boolean]$enableUltimatePerformance = $true, # enables windows' ultimate performance power plan, give you best possible performance but at the expense of power consumption
-  [boolean]$disableMonitorTimeout = $true, # prevents your monitors from turning themselves off after a certain number of inactive minutes
+  [boolean]$disableMonitorTimeout = $false, # prevents your monitors from turning themselves off after a certain number of inactive minutes
   [int]$monitorTimeout = 15, # if $disableMonitorTimeout is set to false, this is the number of minutes of inactivity it will take before your monitors turn off
-  [boolean]$disableSleep = $true, # prevents your computer from entering sleep after a certain number of inactive minutes, highly reccomended for desktop computers
-  [int]$standbyTimeout = 60, # if $disableSleep is set to false, this is the number of minutes of inactivity it will take before your computer goes into standby/sleep
+  [boolean]$disableSleep = $false, # prevents your computer from entering sleep after a certain number of inactive minutes, highly reccomended for desktop computers
+  [int]$standbyTimeout = 90, # if $disableSleep is set to false, this is the number of minutes of inactivity it will take before your computer goes into standby/sleep
   [boolean]$disableUsbSelectiveSuspend = $true, # this prevents windows from disconnecting usb devices after a certain amount of inactivity from said device
 
   # start menu settings
@@ -42,7 +42,7 @@ param(
   [boolean]$hideTaskViewButtonOnTaskbar = $true, # hides the task view button on windows task bar
   [boolean]$hideWidgetButtonOnTaskBar = $true, # hides the widgets button on windows task bar
   [boolean]$showSecondsOnClock = $true, # shows seconds on system clock in the left had corner of the windows taskbar
-  [boolean]$showTaskbarOnAllDisplays = $false # hides taskbar on secondary displays
+  [boolean]$showTaskbarOnAllDisplays = $true # hides taskbar on secondary displays
 )
 
 function quit () {
