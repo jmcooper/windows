@@ -185,20 +185,30 @@
 	- restart your computer after installing all drivers
  	- Note that every driver you need may not be listed below, said list is composed of items relevant to me and my direct peers.
 15. ### configure audio settings
-	- open control panel & navigate to `hardware & sound > sound`
- 	- verify you're on the "playback" tab 
-		- right click any device that you wont be using & select "disable" (repeat for all unused devices)
-		- right click any device and uncheck "show disabled devices" (re-enable as needed for troubleshooting and stuff)
-		- if you only have one usable/desired output device
-			- select desired device & click the "set default" button below the device list
-		- if you have a fancy pants audio mixer or what have you with multiple usable output devices
-			- right click which audio output you want as your default output device & select "set as default device"
-			- right click which audio output you want as your communication device & select "set as default comunication device"
-	- click on "recording" tab
-		- right click any device that you wont be using & select "disable" (repeat for all unused devices)
-		- right click any device and uncheck "show disabled devices" (re-enable as needed for troubleshooting and such)
-		- select desired device & click the "set default" button below the device list
-	- repeat these steps any time you encounter ***(😔((((audio problems))))😔)***
+	- Install drivers/firmware from rme 
+	- Find totalmix in win/system32 - start and pin
+	- Reboot if fireface/madiface are not showing in system tray
+	- open fireface (babyface) and madiface (digiface) control panels from system tray and:
+		- set madiface (digiface) clock source to input 1 (digiface is slave)
+		- set sample rate on both to 48000Hz
+		- set buffer size to 256 samples
+		- on the madiface (digiface), click on WDM Devices and enable devices 1/2,3/4,5/6,7/8
+		- on the fireface/babyface set clock source to "Optical In"
+	- In Windows Control panel:
+		- Disable all babyface interfaces
+		- Enable digiface interfaces 1/2,3/4,5/6,7/8, and 31/32
+		- Set default audio device to 1/2
+		- Set default output device (mic) to 31/32
+	- In Windows settings > Sound > Volume mixer
+		- Start some audio playing in chrome
+		- Then, in Volume mixer > Apps, set chrome to 5/6
+	- In Discord > Voice/Video
+		- Set Input device to Default
+		- Set Output device to 5/6
+	- open totalmix
+		- Switch to babyface, then load Workspace and load Babyface.tmws from C:\Users\Jim\Documents\RME Workspaces
+		- Switch to digiface, then load Workspace and load Digiface.tmws from C:\Users\Jim\Documents\RME Workspaces
+		- Click on Options Menu > Network Remote Settings > Enable TotalMix Remote Server
 16. ### download/install remaining software as desired using winget/wigui & the **software** list below
 	- just like drivers you don't need to restart your computer when prompted after every single install
 	- restart your computer after installing all desired software (if you were prompted at somepoint to do so)
@@ -283,13 +293,7 @@
 			- set to full rgb color mode
 			- If color mode is partial and greyed out; override settings with "use nvidia color settings".
    	- after driver install it's likely that your windows audio settings got borked (see [configure audio settings](#configure-audio-settings) for fix)
-- other drivers
-	- [silabs 3.9.2](<https://hdfury.com/product/integral-2/>) (hdfury integral 2)
-		- must be installed via **admin elevated** terminal
-		- `start-process -path [releativepath]/Silabs_Driver_v3/Silabs_Driver_v3/USBXpressInstaller.exe`
-	- [magewell pro capture](<https://www.magewell.com/downloads/pro-capture>) (magewell capture pro cards)
 	- [rme drivers](<https://www.rme-usa.com/downloads.html>) (rme audio interfaces)
-	- [tx401](<https://www.tp-link.com/us/support/download/tx401/>) (10g ethernet pcie card)
 # software
 - please read [download/install remaining software as desired using winget/wigui & the software list below](#downloadinstall-remaining-software-as-desired-using-wingetwigui--the-software-list-below)
 - ### **wsl** (windows subsystem for linux)
@@ -308,27 +312,9 @@
 		- **restart your computer**
 - ### winget
 	- admin elevated terminal required
-		- **ffmpeg** (cli media tool)
-			- `winget install gyan.ffmpeg --ignore-security-hash`
-		- **itunes**
- 			- `winget install apple.itunes --ignore-security-hash`
 		- **proton vpn** (vpn client)
 			- `winget install protontechnologies.protonvpn --ignore-security-hash`
-		- **rufus** (image mounter)
-			- `winget install rufus.rufus --ignore-security-hash`
-		- **tailwindcss** (css library for dev)
-			- `winget install tailwindlabs.tailwindcss --ignore-security-hash`
-	- standard terminal
-		- **.net sdks** (micorosft .net runtime(s) for dev)
-			- You have to install .net sdks in decending order or it'll prompt you to update pre-existing installations to later versions. For example, if you have dotnet 6 sdk installed, and try to install .net sdk7; you'll be prompted to update .net 6 to 7. In many cases you need multiple .net SDKs installed, keep this in mind.
-			- `winget install microsoft.dotnet.sdk.7 --ignore-security-hash --force`
-			- `winget install microsoft.dotnet.sdk.6 --ignore-security-hash --force`
-		- **docker desktop** (running docker images for dev)
-			- **wsl must be installed/configured first (see [wsl](#wsl-windows-subsystem-for-linux))**
-			- `winget install docker.dockerdesktop --ignore-security-hash`
 - ### microsoft store
-	- **icloud** (apples icloud desktop application)
-	- **cisco anyconnect** (vpn client)
 	- **wsa** (windows subsystem for android)
 		- download amazon store via microsoft store
 		- **restart your computer**
