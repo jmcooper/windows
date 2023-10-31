@@ -3,6 +3,7 @@ AgileBits.1Password --ignore-security-hash
 Discord.Discord --ignore-security-hash
 EpicGames.EpicGamesLauncher --ignore-security-hash
 FinalWire.AIDA64.Extreme --ignore-security-hash
+gyan.ffmpeg --ignore-security-hash
 Google.Chrome --ignore-security-hash
 Google.ChromeRemoteDesktop --ignore-security-hash
 Guru3D.Afterburner --ignore-security-hash
