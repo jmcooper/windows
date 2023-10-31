@@ -1,5 +1,6 @@
 Acronis.CyberProtectHomeOffice --ignore-security-hash
 AgileBits.1Password --ignore-security-hash
+CoreyButler.NVMforWindows --ignore-security-hash
 CrystalDewWorld.CrystalDiskMark --ignore-security-hash
 Discord.Discord --ignore-security-hash
 EpicGames.EpicGamesLauncher --ignore-security-hash
